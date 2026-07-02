@@ -1,105 +1,422 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TikTok 35 Dias Brasil</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-    body{background:#07070c;color:#fff;line-height:1.5}
-    a{text-decoration:none;color:inherit}
-    .wrap{max-width:1100px;margin:auto;padding:24px}
-    header{min-height:100vh;display:flex;align-items:center;background:radial-gradient(circle at top,#17204a,#07070c 55%)}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;width:100%}
-    .badge{display:inline-block;background:rgba(0,255,255,.12);border:1px solid #16f4ff;color:#16f4ff;padding:8px 14px;border-radius:999px;font-weight:bold;margin-bottom:18px}
-    h1{font-size:clamp(38px,8vw,76px);line-height:.95;margin-bottom:18px}
-    h1 span{color:#ff2f6d;text-shadow:0 0 18px rgba(255,47,109,.6)}
-    .lead{font-size:19px;color:#d7d7e8;margin-bottom:26px;max-width:650px}
-    .buttons{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px}
-    .btn{padding:15px 22px;border-radius:14px;font-weight:bold;display:inline-block;transition:.2s}
-    .btn:hover{transform:translateY(-2px)}
-    .primary{background:linear-gradient(135deg,#16f4ff,#ff2f6d);color:#fff}
-    .secondary{background:#171827;border:1px solid #333652;color:#fff}
-    .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:24px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
-    .logoBox{text-align:center;padding:34px;background:linear-gradient(145deg,#090910,#16162a);border-radius:28px;border:1px solid #2c2c45}
-    .gift{font-size:86px;margin-bottom:10px}.big35{font-size:72px;font-weight:900}.cyan{color:#16f4ff}.pink{color:#ff2f6d}
-    section{padding:70px 0}.title{font-size:34px;margin-bottom:14px}.muted{color:#c5c5d6}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.item{background:#11121d;border:1px solid #25263a;border-radius:20px;padding:22px}.item h3{margin-bottom:10px;color:#16f4ff}
-    .rules{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}.rule{background:#10111b;border-left:4px solid #ff2f6d;padding:16px;border-radius:12px;color:#ddd}
-    .admin{background:linear-gradient(135deg,rgba(22,244,255,.12),rgba(255,47,109,.12));border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:28px;margin-top:26px}
-    .formbox{background:#fff;color:#161616;border-radius:28px;padding:30px;text-align:center}.formbox h2{color:#111;margin-bottom:8px}.formbox p{color:#555;margin-bottom:20px}
-    footer{text-align:center;color:#999;padding:40px 20px;border-top:1px solid #202030}
-    .notice{font-size:13px;color:#aaa;margin-top:18px}
-    @media(max-width:800px){.hero,.grid,.rules{grid-template-columns:1fr}header{min-height:auto;padding:50px 0}.buttons{flex-direction:column}.btn{text-align:center}.logoBox{padding:24px}.big35{font-size:54px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Auralis</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f6f1fb;
+  color:#6f5a86;
+}
+
+header{
+  text-align:center;
+  padding:70px 20px;
+}
+
+.logo{
+  font-size:14px;
+  letter-spacing:8px;
+  color:#a388c5;
+  margin-bottom:20px;
+}
+
+h1{
+  font-size:52px;
+  font-weight:300;
+  margin-bottom:15px;
+}
+
+.subtitle{
+  font-size:16px;
+  color:#8d78a8;
+  margin-bottom:35px;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:14px 30px;
+  border-radius:30px;
+  border:none;
+  cursor:pointer;
+  font-size:15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary{
+  background:#b99ce0;
+  color:white;
+}
+
+.instagram-btn {
+  background: #fdf5ff;
+  border: 1px solid #e1d3f0;
+  color: #b18fd6;
+}
+
+.products{
+  padding:40px 10px;
+}
+
+.section-title{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.section-text{
+  color:#8c77a7;
+  margin-bottom:30px;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:12px;
+}
+
+.card{
+  background:white;
+  padding:15px;
+  border-radius:22px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.product-img{
+  width:100%;
+  height:140px;
+  object-fit:contain;
+  margin-bottom:15px;
+}
+
+.category{
+  font-size:11px;
+  letter-spacing:2px;
+  color:#aa8ec9;
+  margin-bottom:8px;
+  text-transform:uppercase;
+}
+
+.product-name{
+  font-size:15px;
+  margin-bottom:10px;
+  min-height:38px;
+}
+
+.price{
+  font-size:22px;
+  font-weight:bold;
+  color:#7c5aa4;
+  margin-bottom:4px;
+}
+
+.stock{
+  font-size:12px;
+  color:#a388c5;
+  margin-bottom:12px;
+  font-style:italic;
+}
+
+.buy{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:20px;
+  background:#c3a7e7;
+  color:white;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.buy:disabled{
+  background:#d8c9e8;
+  cursor:not-allowed;
+}
+
+.about{
+  padding:60px 20px;
+}
+
+.about-box{
+  background:white;
+  max-width:900px;
+  margin:auto;
+  padding:45px 25px;
+  border-radius:35px;
+  text-align:center;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#8a74a5;
+  font-size:14px;
+}
+
+footer a {
+  color: #ba9ee2;
+  font-weight: bold;
+}
+
+a{
+  text-decoration:none;
+}
+
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="wrap hero">
-      <div>
-        <div class="badge">🎁 Comunidade organizada</div>
-        <h1>TikTok <span>35 Dias</span> Brasil</h1>
-        <p class="lead">Uma comunidade para organizar participantes que ficarão 35 dias sem usar TikTok ou TikTok Lite e, quando estiverem aptos, participarão das rodadas conforme as campanhas disponíveis.</p>
-        <div class="buttons">
-          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSe2DBx1fpw7GQdbUX5faAzjn2y5wgUgzQAiL6l6F4axIEG1ZQ/viewform?usp=publish-editor" target="_blank">Fazer cadastro</a>
-          <a class="btn secondary" href="https://chat.whatsapp.com/FPINX4gZWfU13eygcKot0g" target="_blank">Entrar na comunidade</a>
-        </div>
-        <p class="notice">Administradores: Clara e Matheus.</p>
-      </div>
-      <div class="logoBox">
-        <div class="gift">🎁</div>
-        <div class="big35"><span class="cyan">35</span> <span class="pink">DIAS</span></div>
-        <p class="muted">Organização • Ajuda mútua • Recompensas</p>
-      </div>
-    </div>
-  </header>
 
-  <section>
-    <div class="wrap">
-      <h2 class="title">Como funciona?</h2>
-      <p class="muted">A comunidade é dividida entre pessoas que desinstalaram o TikTok normal e pessoas que desinstalaram o TikTok Lite.</p>
-      <div class="grid">
-        <div class="item"><h3>1. Cadastro</h3><p>Você informa seu nome, WhatsApp, qual app desinstalou e a data da desinstalação.</p></div>
-        <div class="item"><h3>2. Espera de 35 dias</h3><p>Após o período, você poderá ser considerado apto conforme a organização da comunidade.</p></div>
-        <div class="item"><h3>3. Rodadas</h3><p>Quando houver campanha disponível, os participantes aptos poderão se ajudar conforme a fila.</p></div>
-      </div>
-    </div>
-  </section>
+<header>
 
-  <section>
-    <div class="wrap">
-      <h2 class="title">Regras principais</h2>
-      <div class="rules">
-        <div class="rule">Não envie links sem autorização dos administradores.</div>
-        <div class="rule">Respeite a fila e a organização das rodadas.</div>
-        <div class="rule">Informe dados verdadeiros no cadastro.</div>
-        <div class="rule">Não faça spam, divulgação ou cobrança dentro da comunidade.</div>
-        <div class="rule">As recompensas dependem das campanhas e regras do TikTok.</div>
-        <div class="rule">Quem descumprir as regras poderá ser removido.</div>
-      </div>
-      <div class="admin">
-        <h2>👑 Administração</h2>
-        <p>Clara e Matheus organizam os cadastros, acompanham quem completou os 35 dias e liberam as rodadas conforme a disponibilidade das campanhas.</p>
-      </div>
-    </div>
-  </section>
+<div class="logo">AURALIS</div>
 
-  <section>
-    <div class="wrap">
-      <div class="formbox">
-        <h2>Pronto para participar?</h2>
-        <p>Faça seu cadastro e entre na comunidade para acompanhar os avisos.</p>
-        <div class="buttons" style="justify-content:center">
-          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSe2DBx1fpw7GQdbUX5faAzjn2y5wgUgzQAiL6l6F4axIEG1ZQ/viewform?usp=publish-editor" target="_blank">Cadastrar agora</a>
-          <a class="btn secondary" href="https://chat.whatsapp.com/FPINX4gZWfU13eygcKot0g" target="_blank">WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<h1>beleza que vira ritual ✦</h1>
 
-  <footer>
-    <p>🎁 TikTok 35 Dias Brasil</p>
-    <p class="notice">Este site não é oficial do TikTok. É apenas uma comunidade de organização entre participantes.</p>
-  </footer>
+<p class="subtitle">
+skincare • maquiagem • autocuidado
+</p>
+
+<div class="buttons">
+<button class="btn primary">Comprar agora</button>
+<a href="https://instagram.com/auralissbr" target="_blank">
+  <button class="btn instagram-btn">✦ Nosso Instagram</button>
+</a>
+</div>
+
+</header>
+
+<section class="products">
+
+<h2 class="section-title">produtos ✦</h2>
+
+<p class="section-text">
+selecionados para quem ama beleza e autocuidado.
+</p>
+
+<div class="product-grid">
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/d0BHgxTH/serum-facial-matte-max-love.jpg">
+<div class="category">Sérum</div>
+<div class="product-name">Sérum Matte</div>
+<div class="price">R$8,90</div>
+<div class="stock">Restam 6 unidades</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/yF9vV0pV/serum-facial-8-tipos-de-acidos-hialuronicos-e-multiceramidas-max-love.jpg">
+<div class="category">Sérum</div>
+<div class="product-name">Sérum 8 Ácidos</div>
+<div class="price">R$9,90</div>
+<div class="stock">Restam 12 unidades</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/ynBmdCpJ/V-2182-delineador-super-black-vivai-un.jpg">
+<div class="category">Maquiagem</div>
+<div class="product-name">Delineador Vivai</div>
+<div class="price">R$9,90</div>
+<div class="stock">Restam 4 unidades</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/zV0BfW15/K-621-demaquilante-kyrav.jpg">
+<div class="category">Maquiagem</div>
+<div class="product-name">Demaquilante Kyrav</div>
+<div class="price">R$10,90</div>
+<div class="stock">Resta 1 unidade</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/nqhrGspn/V-3426-lip-balm-bloomy-vivai-un.jpg">
+<div class="category">Lip Balm</div>
+<div class="product-name">Lip Balm Bloomy</div>
+<div class="price">R$11,90</div>
+<div class="stock">Resta 1 unidade</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/C3T0tj14/BM-034-argila-preta-blue-moon.jpg">
+<div class="category">Argila</div>
+<div class="product-name">Argila Preta</div>
+<div class="price">R$12,90</div>
+<div class="stock">Esgotado</div>
+<button class="buy" disabled>Esgotado</button>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/srjjd4s/BM-038-argila-vermelha-blue-moon.jpg">
+<div class="category">Argila</div>
+<div class="product-name">Argila Vermelha</div>
+<div class="price">R$12,90</div>
+<div class="stock">Resta 1 unidade</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/TsBFM5c/ML-gloss-latex-07-incolor.jpg">
+<div class="category">Gloss</div>
+<div class="product-name">Gloss Latex Incolor</div>
+<div class="price">R$13,90</div>
+<div class="stock">Restam 2 unidades</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/tpBF7gtH/ML-419-lip-balm-mel-miss-lary-un.jpg">
+<div class="category">Lip Balm</div>
+<div class="product-name">Lip Balm Mel</div>
+<div class="price">R$13,90</div>
+<div class="stock">Resta 1 unidade</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/qLCHFWY9/ML-411-lip-balm-pistache-miss-lary-un.jpg">
+<div class="category">Balm</div>
+<div class="product-name">Balm Pistache</div>
+<div class="price">R$13,90</div>
+<div class="stock">Resta 1 unidade</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/7xLfrSct/serum-rosa-mosqueta-max-love-nova-embalagem.jpg">
+<div class="category">Sérum</div>
+<div class="product-name">Sérum Rosa Mosqueta</div>
+<div class="price">R$14,90</div>
+<div class="stock">Restam 3 unidades</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/sv4wFYWs/serum-10em1-vitamina-c-max-love-nova-embalagem.jpg">
+<div class="category">Sérum</div>
+<div class="product-name">Sérum Facial Vitamina C</div>
+<div class="price">R$14,90</div>
+<div class="stock">Resta 1 unidade</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/gbkX6BJn/gloss-latex-13-morango-max-love.jpg">
+<div class="category">Gloss</div>
+<div class="product-name">Gloss Latex Morango</div>
+<div class="price">R$14,90</div>
+<div class="stock">Resta 1 unidade</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/QjjnF5ZB/mascara-facial-peel-off-vitamina-c-50g-max-love-un.jpg">
+<div class="category">Máscara Facial</div>
+<div class="product-name">Máscara Vitamina C</div>
+<div class="price">R$14,90</div>
+<div class="stock">Restam 3 unidades</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/JjzxVNVr/mascara-facial-peel-off-pepino-50g-max-love-un.jpg">
+<div class="category">Máscara Facial</div>
+<div class="product-name">Máscara Pepino</div>
+<div class="price">R$14,90</div>
+<div class="stock">Restam 3 unidades</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/M5S0MgMC/mascara-facial-peel-off-rosa-mosqueta-50g-max-love-un.jpg">
+<div class="category">Máscara Facial</div>
+<div class="product-name">Máscara Rosa Mosqueta</div>
+<div class="price">R$14,90</div>
+<div class="stock">Restam 2 unidades</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/XxXW2nf6/mascara-facial-peel-off-acido-hialuronico-50g-max-love-un.jpg">
+<div class="category">Máscara</div>
+<div class="product-name">Máscara Ácido Hialurônico</div>
+<div class="price">R$14,90</div>
+<div class="stock">Restam 2 unidades</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/JWJnQLW4/gel-incolor-cilios-e-sobrancelhas-max-love-un.jpg">
+<div class="category">Maquiagem</div>
+<div class="product-name">Gel Incolor Cílios e Sobrancelhas</div>
+<div class="price">R$14,90</div>
+<div class="stock">Restam 3 unidades</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/GQxC33gk/serum-facial-glycolic-ha-max-love-2.jpg">
+<div class="category">Sérum</div>
+<div class="product-name">Sérum Glycolic</div>
+<div class="price">R$14,90</div>
+<div class="stock">Restam 5 unidades</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/vxZ11zTY/lip-balm-gloss-glow-love-com-mel-de-abelha-mel-max-love-un.jpg">
+<div class="category">Lip Balm</div>
+<div class="product-name">Lip Balm Glow</div>
+<div class="price">R$15,90</div>
+<div class="stock">Restam 2 unidades</div>
+<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+</div>
+
+</div>
+</section>
+
+<section class="about">
+
+<div class="about-box">
+
+<div class="logo">AURALIS ✦</div>
+
+<h2 class="section-title">
+Soft Beauty
+</h2>
+
+<p class="section-text">
+produtos escolhidos para transformar autocuidado em ritual.
+</p>
+
+</div>
+</section>
+
+<footer>
+© 2026 Auralis • Siga-nos no <a href="https://instagram.com/auralissbr" target="_blank">Instagram</a>
+</footer>
+
 </body>
 </html>
