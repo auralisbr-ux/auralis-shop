@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Auralis</title>
+<title>Auralis - Produtos e Estoque</title>
 
 <style>
 
@@ -98,6 +98,7 @@ h1{
   padding:15px;
   border-radius:22px;
   box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  position: relative; /* Adicionado para lidar com o overlay opcional */
 }
 
 .product-img{
@@ -105,6 +106,12 @@ h1{
   height:140px;
   object-fit:contain;
   margin-bottom:15px;
+  transition: filter 0.3s ease; /* Suavizar a transição */
+}
+
+/* Regra CSS para produtos esgotados: imagem em preto e branco */
+.card.sold-out .product-img {
+  filter: grayscale(100%);
 }
 
 .category{
@@ -135,6 +142,11 @@ h1{
   font-style:italic;
 }
 
+/* Estilo para a mensagem de estoque quando esgotado */
+.card.sold-out .stock {
+  color: #a09cb4; /* Cor mais neutra */
+}
+
 .buy{
   width:100%;
   padding:12px;
@@ -144,11 +156,14 @@ h1{
   color:white;
   font-size:14px;
   cursor:pointer;
+  transition: background-color 0.3s ease;
 }
 
-.buy:disabled{
+/* Estilo para o botão de compra quando esgotado */
+.buy:disabled, .card.sold-out .buy {
   background:#d8c9e8;
   cursor:not-allowed;
+  color: #a09cb4;
 }
 
 .about{
@@ -206,34 +221,34 @@ skincare • maquiagem • autocuidado
 
 <section class="products">
 
-<h2 class="section-title">produtos ✦</h2>
+<h2 class="section-title">produtos e estoque ✦</h2>
 
 <p class="section-text">
-selecionados para quem ama beleza e autocuidado.
+confira a disponibilidade dos nossos produtos e planeje seu ritual.
 </p>
 
 <div class="product-grid">
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/d0BHgxTH/serum-facial-matte-max-love.jpg">
+<img class="product-img" src="https://i.ibb.co/d0BHgxTH/serum-facial-matte-max-love.jpg" alt="Sérum Matte">
 <div class="category">Sérum</div>
 <div class="product-name">Sérum Matte</div>
 <div class="price">R$8,90</div>
-<div class="stock">Restam 6 unidades</div>
+<div class="stock">Restam 5 unidades</div>
 <a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/yF9vV0pV/serum-facial-8-tipos-de-acidos-hialuronicos-e-multiceramidas-max-love.jpg">
+<img class="product-img" src="https://i.ibb.co/yF9vV0pV/serum-facial-8-tipos-de-acidos-hialuronicos-e-multiceramidas-max-love.jpg" alt="Sérum 8 Ácidos">
 <div class="category">Sérum</div>
 <div class="product-name">Sérum 8 Ácidos</div>
 <div class="price">R$9,90</div>
-<div class="stock">Restam 12 unidades</div>
+<div class="stock">Restam 11 unidades</div>
 <a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/ynBmdCpJ/V-2182-delineador-super-black-vivai-un.jpg">
+<img class="product-img" src="https://i.ibb.co/ynBmdCpJ/V-2182-delineador-super-black-vivai-un.jpg" alt="Delineador Vivai">
 <div class="category">Maquiagem</div>
 <div class="product-name">Delineador Vivai</div>
 <div class="price">R$9,90</div>
@@ -241,17 +256,17 @@ selecionados para quem ama beleza e autocuidado.
 <a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
 </div>
 
-<div class="card">
-<img class="product-img" src="https://i.ibb.co/zV0BfW15/K-621-demaquilante-kyrav.jpg">
+<div class="card sold-out">
+<img class="product-img" src="https://i.ibb.co/zV0BfW15/K-621-demaquilante-kyrav.jpg" alt="Demaquilante Kyrav">
 <div class="category">Maquiagem</div>
 <div class="product-name">Demaquilante Kyrav</div>
 <div class="price">R$10,90</div>
-<div class="stock">Resta 1 unidade</div>
-<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+<div class="stock">Esgotado</div>
+<button class="buy" disabled>Esgotado</button>
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/nqhrGspn/V-3426-lip-balm-bloomy-vivai-un.jpg">
+<img class="product-img" src="https://i.ibb.co/nqhrGspn/V-3426-lip-balm-bloomy-vivai-un.jpg" alt="Lip Balm Bloomy">
 <div class="category">Lip Balm</div>
 <div class="product-name">Lip Balm Bloomy</div>
 <div class="price">R$11,90</div>
@@ -259,8 +274,8 @@ selecionados para quem ama beleza e autocuidado.
 <a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
 </div>
 
-<div class="card">
-<img class="product-img" src="https://i.ibb.co/C3T0tj14/BM-034-argila-preta-blue-moon.jpg">
+<div class="card sold-out">
+<img class="product-img" src="https://i.ibb.co/C3T0tj14/BM-034-argila-preta-blue-moon.jpg" alt="Argila Preta">
 <div class="category">Argila</div>
 <div class="product-name">Argila Preta</div>
 <div class="price">R$12,90</div>
@@ -269,7 +284,7 @@ selecionados para quem ama beleza e autocuidado.
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/srjjd4s/BM-038-argila-vermelha-blue-moon.jpg">
+<img class="product-img" src="https://i.ibb.co/srjjd4s/BM-038-argila-vermelha-blue-moon.jpg" alt="Argila Vermelha">
 <div class="category">Argila</div>
 <div class="product-name">Argila Vermelha</div>
 <div class="price">R$12,90</div>
@@ -278,16 +293,16 @@ selecionados para quem ama beleza e autocuidado.
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/TsBFM5c/ML-gloss-latex-07-incolor.jpg">
+<img class="product-img" src="https://i.ibb.co/TsBFM5c/ML-gloss-latex-07-incolor.jpg" alt="Gloss Latex Incolor">
 <div class="category">Gloss</div>
 <div class="product-name">Gloss Latex Incolor</div>
 <div class="price">R$13,90</div>
-<div class="stock">Restam 2 unidades</div>
+<div class="stock">Resta 1 unidade</div>
 <a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/tpBF7gtH/ML-419-lip-balm-mel-miss-lary-un.jpg">
+<img class="product-img" src="https://i.ibb.co/tpBF7gtH/ML-419-lip-balm-mel-miss-lary-un.jpg" alt="Lip Balm Mel">
 <div class="category">Lip Balm</div>
 <div class="product-name">Lip Balm Mel</div>
 <div class="price">R$13,90</div>
@@ -295,17 +310,17 @@ selecionados para quem ama beleza e autocuidado.
 <a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
 </div>
 
-<div class="card">
-<img class="product-img" src="https://i.ibb.co/qLCHFWY9/ML-411-lip-balm-pistache-miss-lary-un.jpg">
+<div class="card sold-out">
+<img class="product-img" src="https://i.ibb.co/qLCHFWY9/ML-411-lip-balm-pistache-miss-lary-un.jpg" alt="Balm Pistache">
 <div class="category">Balm</div>
 <div class="product-name">Balm Pistache</div>
 <div class="price">R$13,90</div>
-<div class="stock">Resta 1 unidade</div>
-<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+<div class="stock">Esgotado</div>
+<button class="buy" disabled>Esgotado</button>
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/7xLfrSct/serum-rosa-mosqueta-max-love-nova-embalagem.jpg">
+<img class="product-img" src="https://i.ibb.co/7xLfrSct/serum-rosa-mosqueta-max-love-nova-embalagem.jpg" alt="Sérum Rosa Mosqueta">
 <div class="category">Sérum</div>
 <div class="product-name">Sérum Rosa Mosqueta</div>
 <div class="price">R$14,90</div>
@@ -314,7 +329,7 @@ selecionados para quem ama beleza e autocuidado.
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/sv4wFYWs/serum-10em1-vitamina-c-max-love-nova-embalagem.jpg">
+<img class="product-img" src="https://i.ibb.co/sv4wFYWs/serum-10em1-vitamina-c-max-love-nova-embalagem.jpg" alt="Sérum Facial Vitamina C">
 <div class="category">Sérum</div>
 <div class="product-name">Sérum Facial Vitamina C</div>
 <div class="price">R$14,90</div>
@@ -322,17 +337,17 @@ selecionados para quem ama beleza e autocuidado.
 <a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
 </div>
 
-<div class="card">
-<img class="product-img" src="https://i.ibb.co/gbkX6BJn/gloss-latex-13-morango-max-love.jpg">
+<div class="card sold-out">
+<img class="product-img" src="https://i.ibb.co/gbkX6BJn/gloss-latex-13-morango-max-love.jpg" alt="Gloss Latex Morango">
 <div class="category">Gloss</div>
 <div class="product-name">Gloss Latex Morango</div>
 <div class="price">R$14,90</div>
-<div class="stock">Resta 1 unidade</div>
-<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
+<div class="stock">Esgotado</div>
+<button class="buy" disabled>Esgotado</button>
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/QjjnF5ZB/mascara-facial-peel-off-vitamina-c-50g-max-love-un.jpg">
+<img class="product-img" src="https://i.ibb.co/QjjnF5ZB/mascara-facial-peel-off-vitamina-c-50g-max-love-un.jpg" alt="Máscara Vitamina C">
 <div class="category">Máscara Facial</div>
 <div class="product-name">Máscara Vitamina C</div>
 <div class="price">R$14,90</div>
@@ -341,7 +356,7 @@ selecionados para quem ama beleza e autocuidado.
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/JjzxVNVr/mascara-facial-peel-off-pepino-50g-max-love-un.jpg">
+<img class="product-img" src="https://i.ibb.co/JjzxVNVr/mascara-facial-peel-off-pepino-50g-max-love-un.jpg" alt="Máscara Pepino">
 <div class="category">Máscara Facial</div>
 <div class="product-name">Máscara Pepino</div>
 <div class="price">R$14,90</div>
@@ -350,7 +365,7 @@ selecionados para quem ama beleza e autocuidado.
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/M5S0MgMC/mascara-facial-peel-off-rosa-mosqueta-50g-max-love-un.jpg">
+<img class="product-img" src="https://i.ibb.co/M5S0MgMC/mascara-facial-peel-off-rosa-mosqueta-50g-max-love-un.jpg" alt="Máscara Rosa Mosqueta">
 <div class="category">Máscara Facial</div>
 <div class="product-name">Máscara Rosa Mosqueta</div>
 <div class="price">R$14,90</div>
@@ -359,7 +374,7 @@ selecionados para quem ama beleza e autocuidado.
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/XxXW2nf6/mascara-facial-peel-off-acido-hialuronico-50g-max-love-un.jpg">
+<img class="product-img" src="https://i.ibb.co/XxXW2nf6/mascara-facial-peel-off-acido-hialuronico-50g-max-love-un.jpg" alt="Máscara Ácido Hialurônico">
 <div class="category">Máscara</div>
 <div class="product-name">Máscara Ácido Hialurônico</div>
 <div class="price">R$14,90</div>
@@ -368,55 +383,14 @@ selecionados para quem ama beleza e autocuidado.
 </div>
 
 <div class="card">
-<img class="product-img" src="https://i.ibb.co/JWJnQLW4/gel-incolor-cilios-e-sobrancelhas-max-love-un.jpg">
+<img class="product-img" src="https://i.ibb.co/JWJnQLW4/gel-incolor-cilios-e-sobrancelhas-max-love-un.jpg" alt="Gel Incolor Cílios e Sobrancelhas">
 <div class="category">Maquiagem</div>
 <div class="product-name">Gel Incolor Cílios e Sobrancelhas</div>
 <div class="price">R$14,90</div>
-<div class="stock">Restam 3 unidades</div>
-<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
-</div>
-
-<div class="card">
-<img class="product-img" src="https://i.ibb.co/GQxC33gk/serum-facial-glycolic-ha-max-love-2.jpg">
-<div class="category">Sérum</div>
-<div class="product-name">Sérum Glycolic</div>
-<div class="price">R$14,90</div>
-<div class="stock">Restam 5 unidades</div>
-<a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
-</div>
-
-<div class="card">
-<img class="product-img" src="https://i.ibb.co/vxZ11zTY/lip-balm-gloss-glow-love-com-mel-de-abelha-mel-max-love-un.jpg">
-<div class="category">Lip Balm</div>
-<div class="product-name">Lip Balm Glow</div>
-<div class="price">R$15,90</div>
 <div class="stock">Restam 2 unidades</div>
 <a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
 </div>
 
-</div>
-</section>
-
-<section class="about">
-
-<div class="about-box">
-
-<div class="logo">AURALIS ✦</div>
-
-<h2 class="section-title">
-Soft Beauty
-</h2>
-
-<p class="section-text">
-produtos escolhidos para transformar autocuidado em ritual.
-</p>
-
-</div>
-</section>
-
-<footer>
-© 2026 Auralis • Siga-nos no <a href="https://instagram.com/auralissbr" target="_blank">Instagram</a>
-</footer>
-
-</body>
-</html> 
+<div class="card">
+<img class="product-img" src="https://i.ibb.co/GQxC33gk/serum-facial-glycolic-ha-max-love-2.jpg" alt="Sérum Glycolic">
+<div class="category">Sérumhttp://googleusercontent.com/generated_image_content/0
