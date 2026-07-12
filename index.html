@@ -94,10 +94,12 @@ h1{
 }
 
 .card{
+  position:relative;
   background:white;
   padding:15px;
   border-radius:22px;
   box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  overflow:hidden;
 }
 
 .product-img{
@@ -105,6 +107,30 @@ h1{
   height:140px;
   object-fit:contain;
   margin-bottom:15px;
+}
+
+.card.sold{
+  opacity:.82;
+}
+
+.card.sold .product-img{
+  filter:grayscale(100%) brightness(.75);
+}
+
+.sold-badge{
+  position:absolute;
+  top:18px;
+  right:-45px;
+  width:170px;
+  background:#e53935;
+  color:#fff;
+  text-align:center;
+  font-size:13px;
+  font-weight:bold;
+  padding:7px 0;
+  transform:rotate(35deg);
+  letter-spacing:2px;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
 }
 
 .category{
@@ -241,7 +267,8 @@ selecionados para quem ama beleza e autocuidado.
 <a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
 </div>
 
-<div class="card">
+<div class="card sold">
+<div class="sold-badge">ESGOTADO</div>
 <img class="product-img" src="https://i.ibb.co/zV0BfW15/K-621-demaquilante-kyrav.jpg">
 <div class="category">Maquiagem</div>
 <div class="product-name">Demaquilante Kyrav</div>
@@ -259,7 +286,8 @@ selecionados para quem ama beleza e autocuidado.
 <a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
 </div>
 
-<div class="card">
+<div class="card sold">
+<div class="sold-badge">ESGOTADO</div>
 <img class="product-img" src="https://i.ibb.co/C3T0tj14/BM-034-argila-preta-blue-moon.jpg">
 <div class="category">Argila</div>
 <div class="product-name">Argila Preta</div>
@@ -295,7 +323,8 @@ selecionados para quem ama beleza e autocuidado.
 <a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
 </div>
 
-<div class="card">
+<div class="card sold">
+<div class="sold-badge">ESGOTADO</div>
 <img class="product-img" src="https://i.ibb.co/qLCHFWY9/ML-411-lip-balm-pistache-miss-lary-un.jpg">
 <div class="category">Balm</div>
 <div class="product-name">Balm Pistache</div>
@@ -322,7 +351,8 @@ selecionados para quem ama beleza e autocuidado.
 <a href="https://wa.me/5586994372249"><button class="buy">Comprar</button></a>
 </div>
 
-<div class="card">
+<div class="card sold">
+<div class="sold-badge">ESGOTADO</div>
 <img class="product-img" src="https://i.ibb.co/gbkX6BJn/gloss-latex-13-morango-max-love.jpg">
 <div class="category">Gloss</div>
 <div class="product-name">Gloss Latex Morango</div>
